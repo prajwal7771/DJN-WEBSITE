@@ -5,13 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>DJN Labs</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --purple:#7c3aed;
   --purple-bright:#9d5cff;
-  --purple-dark:#4c1d95;
-  --purple-glow:rgba(124,58,237,0.35);
   --bg:#0a0a0f;
   --bg2:#0f0f1a;
   --bg3:#13131f;
@@ -24,7 +23,6 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,10,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
 .nav-logo{font-family:'Orbitron',monospace;font-weight:900;font-size:1.1rem;color:var(--white);letter-spacing:2px;}
@@ -35,7 +33,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,10,15,0.9
 .nav-cta{background:var(--purple);color:#fff;border:none;padding:.5rem 1.25rem;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .2s;}
 .nav-cta:hover{background:var(--purple-bright);}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:100px 5% 60px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(124,58,237,0.18) 0%,transparent 70%);pointer-events:none;}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(124,58,237,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.07) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
@@ -56,7 +53,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(10,10,15,0.9
 .hero-stat-num span{color:var(--purple-bright);}
 .hero-stat-label{font-size:.75rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:.25rem;}
 
-/* SECTION COMMON */
 section{padding:80px 5%;}
 .section-inner{max-width:1200px;margin:0 auto;}
 .section-tag{font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--purple-bright);margin-bottom:.75rem;font-family:'Rajdhani',sans-serif;font-weight:600;}
@@ -64,14 +60,13 @@ section{padding:80px 5%;}
 .section-line{width:48px;height:2px;background:var(--purple);margin-bottom:2.5rem;}
 .divider{border:none;border-top:1px solid var(--border);margin:0;}
 
-/* SCRIPTS GRID */
 .scripts-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem;}
 .scripts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
 .script-card{background:var(--bg2);border:1px solid var(--border);padding:1.5rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);}
 .script-card::before{content:'';position:absolute;top:0;right:0;width:0;height:0;border-style:solid;border-width:0 16px 16px 0;border-color:transparent var(--purple) transparent transparent;}
-.script-card:hover{border-color:var(--purple-bright);transform:translateY(-4px);}
+.script-card:hover{border-color:var(--border-bright);transform:translateY(-4px);}
 .card-category{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--purple-bright);margin-bottom:.75rem;font-family:'Rajdhani',sans-serif;font-weight:600;}
-.card-icon{font-size:1.8rem;margin-bottom:.75rem;}
+.card-icon{font-size:1.6rem;color:var(--purple-bright);margin-bottom:.75rem;}
 .card-title{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
 .card-desc{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:1.25rem;}
 .card-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;}
@@ -81,17 +76,15 @@ section{padding:80px 5%;}
 .card-btn{background:var(--purple);color:#fff;border:none;padding:.4rem 1rem;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:background .2s;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);}
 .card-btn:hover{background:var(--purple-bright);}
 
-/* FEATURES */
 .features-bg{background:var(--bg2);}
 .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
 .feature-item{background:var(--bg3);border:1px solid var(--border);padding:1.5rem;position:relative;overflow:hidden;}
 .feature-item::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--purple);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
 .feature-item:hover::after{transform:scaleX(1);}
-.feature-icon-wrap{width:44px;height:44px;background:rgba(124,58,237,0.15);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.2rem;}
+.feature-icon-wrap{width:44px;height:44px;background:rgba(124,58,237,0.15);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.1rem;color:var(--purple-bright);}
 .feature-title{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
 .feature-desc{font-size:.82rem;color:var(--text-muted);line-height:1.6;}
 
-/* TESTIMONIALS */
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
 .testimonial-card{background:var(--bg2);border:1px solid var(--border);padding:1.5rem;}
 .testimonial-stars{color:var(--purple-bright);font-size:.9rem;margin-bottom:1rem;letter-spacing:2px;}
@@ -101,13 +94,11 @@ section{padding:80px 5%;}
 .author-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.9rem;color:var(--white);letter-spacing:.5px;}
 .author-sub{font-size:.72rem;color:var(--text-muted);}
 
-/* CTA BANNER */
 .cta-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .cta-inner{max-width:800px;margin:0 auto;text-align:center;}
 .cta-inner h2{font-family:'Orbitron',monospace;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--white);margin-bottom:1rem;}
 .cta-inner p{color:var(--text-muted);margin-bottom:2rem;line-height:1.7;}
 
-/* FOOTER */
 footer{padding:3rem 5%;border-top:1px solid var(--border);}
 .footer-inner{max-width:1200px;margin:0 auto;}
 .footer-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;}
@@ -125,14 +116,12 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
 .footer-bottom-links a{font-size:.75rem;color:var(--text-muted);text-decoration:none;}
 .footer-bottom-links a:hover{color:var(--purple-bright);}
 
-/* SCROLL REVEAL */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s;}
 .reveal.visible{opacity:1;transform:none;}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">DJN <span>LABS</span></div>
@@ -145,7 +134,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -167,7 +155,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
 
 <hr class="divider"/>
 
-<!-- SCRIPTS -->
 <section id="scripts">
   <div class="section-inner">
     <div class="scripts-header">
@@ -180,20 +167,51 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
     <div class="scripts-grid reveal">
       <div class="script-card">
         <div class="card-category">/// Job System</div>
-        <div class="card-icon">fa-shield</div>
-        <div class="card-title">Advanced REPAIR SYSTEM</div>
-        <div class="card-desc">Full repair system, part upgrades, invoicing management. Optimized to 0.01ms idle.</div>
+        <div class="card-icon"><i class="fa-solid fa-wrench"></i></div>
+        <div class="card-title">Advanced Mechanic Job</div>
+        <div class="card-desc">Full mechanic job with repair menus, part upgrades, invoicing, and boss management. Optimized to 0.01ms idle.</div>
         <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Optimized</span><span class="card-tag">ESX Compatible</span></div>
         <div class="card-footer"><div class="card-price">$24.99</div><button class="card-btn">View Script</button></div>
       </div>
-        <div class="script-card">
-        <div class="card-category">/// ADMIN ADVANCED VEHICLE SPAWN</div>
-            <div class="card-icon"></div>
-            <div class="card-title">Bank Robbery System</div>
-            <div class="card-desc">Dynamic bank heists with custom loot tables, security levels, and police interactions.</div>
-            <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Dynamic</span><span class="card-tag">Configurable</span></div>
-            <div class="card-footer"><div class="card-price">$34.99</div><button class="card-btn">View Script</button></div>
-        </div>
+      <div class="script-card">
+        <div class="card-category">/// Heist System</div>
+        <div class="card-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+        <div class="card-title">Bank Robbery System</div>
+        <div class="card-desc">Multi-stage bank heist with hacking minigames, vault cracking, police alerts, and configurable loot tables.</div>
+        <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Minigames</span><span class="card-tag">Multi-Stage</span></div>
+        <div class="card-footer"><div class="card-price">$34.99</div><button class="card-btn">View Script</button></div>
+      </div>
+      <div class="script-card">
+        <div class="card-category">/// Inventory</div>
+        <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+        <div class="card-title">Custom Drug System</div>
+        <div class="card-desc">Fully configurable drug creation, selling, and NPC trade system with dynamic police evidence and crafting tables.</div>
+        <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Configurable</span><span class="card-tag">NPC AI</span></div>
+        <div class="card-footer"><div class="card-price">$29.99</div><button class="card-btn">View Script</button></div>
+      </div>
+      <div class="script-card">
+        <div class="card-category">/// Vehicles</div>
+        <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+        <div class="card-title">Advanced Garage System</div>
+        <div class="card-desc">Persistent garage with impound, damage saving, plate recognition, and multi-location support. Clean UI included.</div>
+        <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Persistent</span><span class="card-tag">Clean UI</span></div>
+        <div class="card-footer"><div class="card-price">$19.99</div><button class="card-btn">View Script</button></div>
+      </div>
+      <div class="script-card">
+        <div class="card-category">/// Housing</div>
+        <div class="card-icon"><i class="fa-solid fa-house"></i></div>
+        <div class="card-title">Property & Housing</div>
+        <div class="card-desc">Full property system with interiors, stash, furniture placement, roommates, and real-estate agent job integration.</div>
+        <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Furniture</span><span class="card-tag">Stash</span></div>
+        <div class="card-footer"><div class="card-price">$39.99</div><button class="card-btn">View Script</button></div>
+      </div>
+      <div class="script-card">
+        <div class="card-category">/// Admin</div>
+        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="card-title">Admin Menu Pro</div>
+        <div class="card-desc">Advanced admin panel with player management, ban system, spectate, noclip, and full activity logs.</div>
+        <div class="card-tags"><span class="card-tag">QB Core</span><span class="card-tag">Logs</span><span class="card-tag">Anti-Cheat</span></div>
+        <div class="card-footer"><div class="card-price">$14.99</div><button class="card-btn">View Script</button></div>
       </div>
     </div>
   </div>
@@ -201,7 +219,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
 
 <hr class="divider"/>
 
-<!-- FEATURES -->
 <section id="features" class="features-bg">
   <div class="section-inner">
     <div class="section-tag">/// Why Choose Us</div>
@@ -209,32 +226,32 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
     <div class="section-line"></div>
     <div class="features-grid reveal">
       <div class="feature-item">
-        <div class="feature-icon-wrap">⚡</div>
+        <div class="feature-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
         <div class="feature-title">0.01ms Idle</div>
         <div class="feature-desc">Every script is profiled and optimized to run at near-zero resource usage. No lag, no frame drops.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon-wrap">🔒</div>
+        <div class="feature-icon-wrap"><i class="fa-solid fa-lock"></i></div>
         <div class="feature-title">Encrypted & Secure</div>
         <div class="feature-desc">All scripts are server-side secured and protected against common exploits and cheats.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon-wrap">📦</div>
+        <div class="feature-icon-wrap"><i class="fa-solid fa-box-open"></i></div>
         <div class="feature-title">Plug & Play</div>
         <div class="feature-desc">Clear documentation and easy install. Most scripts are up and running in under 10 minutes.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon-wrap">🔄</div>
+        <div class="feature-icon-wrap"><i class="fa-solid fa-rotate"></i></div>
         <div class="feature-title">Lifetime Updates</div>
         <div class="feature-desc">Buy once, update forever. All scripts are kept up to date with the latest QB Core releases.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon-wrap">💬</div>
+        <div class="feature-icon-wrap"><i class="fa-brands fa-discord"></i></div>
         <div class="feature-title">Discord Support</div>
         <div class="feature-desc">Dedicated support channel with fast response times from the DJN Labs team and community.</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon-wrap">🎨</div>
+        <div class="feature-icon-wrap"><i class="fa-solid fa-sliders"></i></div>
         <div class="feature-title">Fully Configurable</div>
         <div class="feature-desc">Every script ships with a comprehensive config file — adjust everything without touching the source.</div>
       </div>
@@ -244,7 +261,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
 
 <hr class="divider"/>
 
-<!-- REVIEWS -->
 <section id="reviews">
   <div class="section-inner">
     <div class="section-tag">/// Customer Reviews</div>
@@ -281,7 +297,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
 
 <hr class="divider"/>
 
-<!-- CTA -->
 <section class="cta-section">
   <div class="section-inner">
     <div class="cta-inner">
@@ -296,7 +311,6 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -334,9 +348,9 @@ footer{padding:3rem 5%;border-top:1px solid var(--border);}
     <div class="footer-bottom">
       <p>&copy; 2026 DJN Labs. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#">Discord</a>
-        <a href="#">Tebex</a>
-        <a href="#">GitHub</a>
+        <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
+        <a href="#"><i class="fa-solid fa-store"></i> Tebex</a>
+        <a href="#"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
     </div>
   </div>
